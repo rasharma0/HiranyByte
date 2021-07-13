@@ -1,0 +1,197 @@
+
+Host : 35.231.56.23
+Username : rsa-key-20210618
+सत्य  प्रेम  करुणा 
+
+
+
+	मनाचे श्लोक ( Manache Shloka ) {२०५ }
+	https://www.youtube.com/playlist?list=PL4gNEOlfVMgrHVdxeUV7APlZCOu6CFT2W
+	
+	१३ सेवा सूत्र ( 13 Seva Sutras ) - कीर्तन धुन 
+	https://www.youtube.com/playlist?list=PL4gNEOlfVMgrZmfwWKV8yAlojJMCDl-Be
+
+
+	बालकांड ( Bāl Kāṇḍ ) {३६१}
+	https://www.youtube.com/playlist?list=PL4gNEOlfVMgoSWR2sBsMC8VLZp8GFuze5
+	
+	
+	
+	अयोध्याकांड  ( Ayodha Kāṇḍ ) {३२६}
+	https://www.youtube.com/playlist?list=PL4gNEOlfVMgqZ13ly7TByqWTrn_--EHxy
+	
+	
+	अरण्यकांड ( Araṇya Kāṇḍ ) {४६}
+	
+	https://www.youtube.com/playlist?list=PL4gNEOlfVMgok0b8Fvxl9defQNtwTOWno
+	
+	https://www.youtube.com/playlist?list=PL4gNEOlfVMgok0b8Fvxl9defQNtwTOWno
+	
+	किष्किंधाकाण्ड ( Kiśkindhā Kāṇḍ ) {३० } 
+	
+	https://www.youtube.com/playlist?list=PL4gNEOlfVMgpY_1jcWpU3kMtTke_2nr62
+	
+	https://www.youtube.com/playlist?list=PL4gNEOlfVMgpY_1jcWpU3kMtTke_2nr62
+	
+	सुंदरकाण्ड  2021 ( Sundar Kāṇḍ ) - Series 2 {६० }
+	
+	https://www.youtube.com/playlist?list=PL4gNEOlfVMgojOU9Bzj_lPnW5ks92KhBh
+	
+	https://www.youtube.com/playlist?list=PL4gNEOlfVMgojOU9Bzj_lPnW5ks92KhBh
+	
+	सुंदरकाण्ड  2020 ( Sundar Kāṇḍ ) {६० }
+
+	
+	https://www.youtube.com/playlist?list=PL4gNEOlfVMgozMEKH6AnP4_xKdCOLRKRP
+	
+	https://www.youtube.com/playlist?list=PL4gNEOlfVMgozMEKH6AnP4_xKdCOLRKRP
+	
+	
+	
+	पञ्चम सोपान सुन्दरकाण्ड (  Pancham Sopan SundarKāṇḍ  ) {६० }
+
+	
+	https://www.youtube.com/playlist?list=PL4gNEOlfVMgoYq9DvTb0p2bvogZXmu03q
+	                                      PL4gNEOlfVMgoYq9DvTb0p2bvogZXmu03q
+	
+	
+	लंकाकाण्ड ( Lanka Kāṇḍ ) {१२१ }
+	
+	https://www.youtube.com/playlist?list=PL4gNEOlfVMgrxo6382AfYH-6NPnmCG29Y
+	
+	उत्तरकांड  ( Uttar Kānd ) {१३१ }
+	
+	सम्पूर्ण राम चरितमानस ( Full RamCharitraManas )
+	https://www.youtube.com/playlist?list=PL4gNEOlfVMgqqSPOnxe9XvZCMz_gBxXyA
+	
+	
+	
+	
+================================================================================================
+Location of file to change/add following code : /etc/apache2/Site-enable/000-default.conf
+
+    <Directory /var/www/html/>
+        Options +FollowSymlinks
+        AllowOverride All
+        Require all granted
+      </Directory>
+	  
+	  
+	  
+================================================================================================
+
+<IfModule authz_core_Module>
+	Require all denied
+</IfModule>
+<IfModule !authz_core_Module>
+	Deny from all
+</IfModule>
+
+
+================================================================================================
+Apache/2.4.38 (Debian) Server at Port 443
+
+/etc/apache2/sites-enabled/000-default-le-ssl.conf
+
+/etc/apache2/sites-enabled/000-default-le-ssl.conf
+
+
+================================================================================================
+
+Select the appropriate number [1-2] then [enter] (press 'c' to cancel): 1
+Deploying certificate
+Successfully deployed certificate for xpressionsunlimited.com to /etc/apache2/sites-enabled/000-default-le-ssl.conf
+Successfully deployed certificate for www.xpressionsunlimited.com to /etc/apache2/sites-enabled/000-default-le-ssl.conf
+Congratulations! You have successfully enabled HTTPS on https://xpressionsunlimited.com and https://www.xpressionsunlimited.com
+
+
+================================================================================================
+
+changed in to
+
+ <Directory /var/www/>
+            Options Indexes FollowSymLinks
+            AllowOverride All
+            Require all granted
+    </Directory>
+after that, In order for Apache to understand rewrite rules, we first need to activate mod_rewrite. It's already installed, but it's disabled on a default Apache installation. Use the a2enmod command to enable the module:
+
+$ sudo a2enmod rewrite
+This will activate the module or alert you that the module is already enabled. To put these changes into effect, restart Apache.
+
+$ sudo systemctl restart apache2
+it works for me finally.
+
+
+================================================================================================
+
+I didn’t see the error you are mentioning however, most probably, you haven’t configured anything to run on port 443.
+
+To confirm that, please type in the following command from inside your droplet
+
+netstat -tulpen | grep 443
+Does it display 443 - httpd/apache2? If it doesn’t, you’ll need to make sure Apache is listening on that port. This can be achieved from your httpd/apache2 configuration providing the Listening directive.
+
+Just bellow
+
+Listen 80
+Add
+
+Listen 443
+It shloud look like this
+
+Listen 80
+Listen 443
+Then restart your Apache.
+
+
+================================================================================================
+http://sourceforge.net/projects/filezilla/files%2FOldFiles/
+
+
+================================================================================================
+
+
+CyberDuck - Metadata Key
+
+4/1AX4XfWg4zbg3FqhEEVhG-dX9wOgWJ1wOcr5VqCCXrl1F0iEDUQXleeWf5cs
+
+
+================================================================================================
+gcloud beta compute ssh --zone "us-east1-b" "xpressionsunlimited"  --project "xpressionsunlimited"
+
+xpressionsunlimited
+================================================================================================
+Google Cloud Plateform - Storage Bucket
+
+myxpressionsunlimited
+
+
+
+================================================================================================
+
+puttyGen = rsa-key-20210709
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCB5P0uv8WU37Fm6tieQAFuQWZX/cD6kIBHz4N/LBogj1YtNNU9hFsGWhouZqE0TpZLkiUDfKwNMldy/x7kWBpupVaWkv/z2khys5RTVSZZZrX77M9/zlaZfxH1xLidcoS5RfnDryDgPI9HVOL0Py6LDIrWaY6fujII2xAoMYNV1wex3f3agP1+HXbUQxTCEV674bYvuoXelssdhtzpGvsQhGqP/n6KM8SemnFKPJtnL4dhMzty0GSmGL0acL3ju6XunglVdIexVdrd84IHfYcWyRSS5vaOkIA9TKybgzVfun58KEEogcQAa+lNDlsq0/r0RLULiunhomfqMujyzIs5 rsa-key-20210709
+
+
+================================================================================================
+
+# BEGIN WordPress
+
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+
+AddDefaultCharset UTF-8
+
+
+# END WordPress
+
+
+================================================================================================
+
+श्री गोंदवलेकर महाराजांचे अनुग्रहित श्री रविंद्र पाठक यांचे निरुपण
